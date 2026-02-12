@@ -1,4 +1,4 @@
-//
+// tHIS IS SET OF RULES
 pipeline {
    agent any
    stages {
