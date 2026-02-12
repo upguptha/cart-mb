@@ -1,6 +1,8 @@
 // i AM COMMENTING THE CODE
 pipeline {
-   agent any
+   agent {
+      label 'docker-slave'
+   }
    stages {
       stage ('dockerbuildpush') {
         steps {
