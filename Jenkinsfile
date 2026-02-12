@@ -4,9 +4,9 @@ pipeline {
    stages {
       stage ('dockerbuildpush') {
         steps {
-           echo "docker pull nginx"
+           sh "docker pull nginx"
            echo "***************Docker images List************"
-           echo "docker images"
+           sh "docker images"
            }
          }
       }
