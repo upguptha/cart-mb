@@ -5,7 +5,7 @@ pipeline {
      label 'docker-slave'
   }
   environment {
-     DOCKERHUB_CRED = credentails('DOCKERHUB_CREDS')
+     DOCKERHUB_CRED = credentials('DOCKERHUB_CREDS')
      dockerhub_repo = "sunisriuppala/jenkinsnginx"
   }
    stages {
