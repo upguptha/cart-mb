@@ -6,6 +6,7 @@ pipeline {
    stages {
       stage ('dockerbuildpush') {
         steps {
+           sh "whoami"
            sh "docker pull nginx"
            echo "***************Docker images List************"
            sh "docker images"
