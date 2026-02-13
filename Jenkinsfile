@@ -1,21 +1,19 @@
 // i AM COMMENTING THE CODE
 pipeline {
-// agent any
-   agent {
-     label 'docker-slave'
-  }
+   agent any
+//   agent {
+//     label 'docker-slave'
+//  }
   environment {
-     DOCKERHUB_CRED = credentials('DOCKERHUB_CREDS')
-     dockerhub_repo = "sunisriuppala/jenkinsnginx"
-  }
+        DEPLOY_TO = "production"
+     }
    stages {
-      stage ('dockerbuildpush') {
+      stage ('production deploy') {
+         when {
+            environment name: "DEPLOY_TO", value: "production"
+         }
         steps {
-           sh "whoami"
-           sh "docker pull nginx"
-           sh " docker tag nginx ${dockerhub_repo}:v1"
-           sh " docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}"
-           sh "docker push ${dockerhub_repo}:v1"
+         echo " Deploying into production"
            }
          }
       }
