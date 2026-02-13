@@ -9,8 +9,8 @@ pipeline {
         steps {
            sh "whoami"
            sh "docker pull nginx"
-           echo "***************Docker images List************"
-           sh "docker images"
+           sh " docker tag nginx sunisriuppala/jenkinsnginx:v1"
+           sh "docker push sunisriuppala/jenkinsnginx:v1"
            }
          }
       }
