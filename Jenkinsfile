@@ -7,7 +7,7 @@ pipeline {
        }
     }
   }
-  post {
+  post  {
     //only run this, when the current pipeline or specific stage has success status
     success {
         echo "Post ===================> Success is triggered"
