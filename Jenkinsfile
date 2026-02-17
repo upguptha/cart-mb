@@ -16,7 +16,7 @@ pipeline {
            steps {
             echo "Hello ${params.PERSOSN}"
             echo " Biography: ${params.BIOGRAPHY}"
-            echo " Toogle: ${paramas.TOGGLE}"
+            echo " Toogle: ${params.TOGGLE}"
             echo " selected Choice is: ${params.CHOICE}"
             echo " Password entered is : ${params.PASSWORD}"
            }
