@@ -1,26 +1,24 @@
 pipeline {
-    agent any  
-    parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-
-        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
-
-        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
-
-        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
-
-        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+  agent any
+  stages {
+    stage ('Build') {
+       steps {
+          echo " Building the application"
+       }
     }
-    stages {
-        stage ('EXample')  {
-           steps {
-            echo "Hello ${params.PERSOSN}"
-            echo " Biography: ${params.BIOGRAPHY}"
-            echo " Toogle: ${params.TOGGLE}"
-            echo " selected Choice is: ${params.CHOICE}"
-            echo " Password entered is : ${params.PASSWORD}"
-           }
-
-        }
+  }
+  post {
+    //only run this, when the current pipeline or specific stage has success status
+    success {
+        echo "Post ===================> Success is triggered"
     }
+    // only run when the pipeline or stage is failure status
+    failure {
+        echo " Post ===============> Failure is triggered"
+    }
+    // This will run irrespective of failure or success ..meaning everytime
+    always {
+        echo " Post =================> Always is triggered"
+    }
+  }
 }
