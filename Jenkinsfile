@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent any 
    parameters {
        choice (name: 'BuildOnly',
                choices: 'no\nyes',
