@@ -34,7 +34,7 @@ pipeline {
         }
     }
     stage ('DeployToPord') {
-        Options {
+        options {
          timeout (time: 300, unit: 'SECONDS')
           }
         inputs {
