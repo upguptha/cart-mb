@@ -98,7 +98,7 @@ pipeline {
            allOf {
              anyOf {
                  expression {
-                   params.deployToPord== 'yes'
+                   params.deployToPord == 'yes'
                  }
                }
              anyOf {
