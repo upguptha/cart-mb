@@ -37,7 +37,7 @@ pipeline {
         options {
          timeout (time: 300, unit: 'SECONDS')
           }
-        inputs {
+        input {
             message 'Deploying Prod environemnt?'
             ok 'Deploy'
             submitter 'sunisriuppala,bhumihima'
