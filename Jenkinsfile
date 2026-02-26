@@ -13,7 +13,7 @@ pipeline {
          script {
             def subject = "Build status is : ${currentBuild.currentResult}"
             def body = "Build Number is :  ${currentBuild.number}\n" + "Status is : ${currentBuild.currentResult}\n" + "Job URL: ${env.BUILD_URL}"
-         }
+         
          mail to: 'srinuuppalakpm+b1@gmail.com',
              subject: subject,
              body: body,
@@ -21,7 +21,7 @@ pipeline {
              cc: ' ' ,
              from: 'jenkinsstatus@gmail.com',
              replyTo: ''
- 
+         }
      }
 
   }
