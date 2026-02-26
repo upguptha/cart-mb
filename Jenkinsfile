@@ -11,12 +11,12 @@ pipeline {
   post {
      success {
          script {
-            def Subject = "Build status is : ${currentBuild.currentResult}"
+            def subject = "Build status is : ${currentBuild.currentResult}"
             def body = "Build Number is :  ${currentBuild.number}\n" + "Status is : ${currentBuild.currentResult}\n" + "Job URL: ${env.BUILD_URL}"
          }
          mail to: 'srinuuppalakpm+b1@gmail.com',
-             subject: "Jenkins job status",
-             body: "Build is Success",
+             subject: subject,
+             body: body,
              bcc: '',
              cc: ' ' ,
              from: 'jenkinsstatus@gmail.com',
