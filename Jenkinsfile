@@ -11,7 +11,7 @@ pipeline {
   post {
      success {
          script {
-            def Subject = "Build status is : $(currentBuild.currentResult)"
+            def Subject = "Build status is : ${currentBuild.currentResult}"
             def body = "Build Number is :  ${currentbuild.number}\n" + "Status is : ${currentBuild.currentResult}\n" + "Job URL: ${env.BUILD_URL}"
          }
          mail to: 'srinuuppalakpm+b1@gmail.com',
